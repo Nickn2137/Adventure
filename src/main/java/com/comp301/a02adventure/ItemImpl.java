@@ -24,7 +24,8 @@ public class ItemImpl implements Item {
         else if (other == null) {
             return false;
         }
-        return false;
+        ItemImpl var = (ItemImpl) other;
+        return name.equals(var.name);
     }
 
     @Override
