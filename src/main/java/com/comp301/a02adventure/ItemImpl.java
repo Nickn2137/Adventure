@@ -21,6 +21,9 @@ public class ItemImpl implements Item {
         if (this.toString() == other.toString()) {
             return true;
         }
+        else if (other == null) {
+            return false;
+        }
         return false;
     }
 
