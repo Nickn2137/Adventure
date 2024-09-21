@@ -7,10 +7,10 @@ public class CellImpl implements Cell {
     private Inventory chest;
     private boolean visited;
     public CellImpl (int x, int y, String name, String description) {
-        this.position = new PositionImpl(x,y);
         if (name == null || description == null) {
             throw new IllegalArgumentException("Something is null");
         }
+        this.position = new PositionImpl(x,y);
         this.name = name;
         this.description = description;
         this.visited = false;
