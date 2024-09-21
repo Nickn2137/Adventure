@@ -52,6 +52,9 @@ public class CellImpl implements Cell {
     }
 
     public void setChest(Inventory chest) {
+        if (chest == null) {
+            throw new IllegalArgumentException("Null");
+        }
         this.chest = chest;
     }
 
