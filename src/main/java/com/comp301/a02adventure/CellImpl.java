@@ -44,10 +44,16 @@ public class CellImpl implements Cell {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("Null");
+        }
         this.name = name;
     }
 
     public void setDescription(String description) {
+        if (description == null) {
+            throw new IllegalArgumentException("Null");
+        }
         this.description = description;
     }
 
