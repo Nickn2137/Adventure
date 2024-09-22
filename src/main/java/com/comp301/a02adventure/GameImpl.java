@@ -62,12 +62,12 @@ public class GameImpl implements Game {
 
     public boolean canMove(Direction direction) {
         Position newPos = player.getPosition().getNeighbor(direction);
-        try {
-            map.getCell(newPos);
-            return true;
-        } catch (IndexOutOfBoundsException error) {
+        if (newPos.getX() < 0 || newPos.getX() >= map.getWidth() || newPos.getY() < 0 || newPos.getY() >= map.getHeight()) {
             return false;
         }
+
+        Cell nullCell = map.getCell(newPos);
+        return nullCell != null;
     }
 
     public void move(Direction direction) {
