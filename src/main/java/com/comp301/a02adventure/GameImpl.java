@@ -65,7 +65,7 @@ public class GameImpl implements Game {
         int newPosX = newPos.getX();
         int newPosY = newPos.getY();
 
-        if (newPosX <= 0 || newPosX >= map.getWidth() || newPosY <= 0 || newPosY >= map.getHeight()) {
+        if (newPosX < 0 || newPosX >= map.getWidth() || newPosY < 0 || newPosY >= map.getHeight()) {
             return false;
         }
 
