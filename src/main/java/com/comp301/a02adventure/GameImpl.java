@@ -52,7 +52,7 @@ public class GameImpl implements Game {
         }
 
         Inventory chest = currCell.getChest();
-        if (chest.getNumItems() == 0) {
+        if (chest.isEmpty()) {
             System.out.println("The chest is empty.");
         } else {
             player.getInventory().transferFrom(chest);
