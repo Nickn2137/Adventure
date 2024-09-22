@@ -2,43 +2,45 @@ package com.comp301.a02adventure;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class InventoryImpl implements Inventory {
-    private final List<Item> items;
-    public InventoryImpl() {
-        this.items = new ArrayList<>();
-    }
+  private final List<Item> items;
 
-    @Override
-    public boolean isEmpty() {
-        return items.isEmpty();
-    }
+  public InventoryImpl() {
+    this.items = new ArrayList<>();
+  }
 
-    @Override
-    public int getNumItems() {
-        return items.size();
-    }
+  @Override
+  public boolean isEmpty() {
+    return items.isEmpty();
+  }
 
-    public List<Item> getItems() {
-        List<Item> second;
-        second = new ArrayList<>(items);
-        return second;
-    }
+  @Override
+  public int getNumItems() {
+    return items.size();
+  }
 
-    public void addItem(Item item) {
-        items.add(item);
-    }
+  public List<Item> getItems() {
+    List<Item> second;
+    second = new ArrayList<>(items);
+    return second;
+  }
 
-    public void removeItem(Item item) {
-        items.remove(item);
-    }
+  public void addItem(Item item) {
+    items.add(item);
+  }
 
-    public void clear() {
-        items.clear();
-    }
+  public void removeItem(Item item) {
+    items.remove(item);
+  }
 
-    public void transferFrom(Inventory other) {
-        List<Item> otherItems = other.getItems();
-        items.addAll(otherItems);
-        other.clear();
-    }
+  public void clear() {
+    items.clear();
+  }
+
+  public void transferFrom(Inventory other) {
+    List<Item> otherItems = other.getItems();
+    items.addAll(otherItems);
+    other.clear();
+  }
 }
