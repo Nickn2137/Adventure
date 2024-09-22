@@ -55,8 +55,9 @@ public class GameImpl implements Game {
         if (chest.isEmpty()) {
             System.out.println("The chest is empty.");
         } else {
+            List<Item> items = chest.getItems();
             player.getInventory().transferFrom(chest);
-            System.out.println("You collected these items: " + chest.getItems());
+            System.out.println("You collected these items: " + items);
         }
     }
 
