@@ -62,10 +62,10 @@ public class GameImpl implements Game {
 
     public boolean canMove(Direction direction) {
         Position newPos = player.getPosition().getNeighbor(direction);
-        int X = newPos.getX();
-        int Y = newPos.getY();
+        int newPosX = newPos.getX();
+        int newPosY = newPos.getY();
 
-        if (X < 0 || X >= map.getWidth() || Y < 0 || Y >= map.getHeight()) {
+        if (newPosX <= 0 || newPosX >= map.getWidth() || newPosY <= 0 || newPosY >= map.getHeight()) {
             return false;
         }
 
