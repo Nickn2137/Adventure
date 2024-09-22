@@ -62,22 +62,12 @@ public class GameImpl implements Game {
 
     public boolean canMove(Direction direction) {
         Position newPos = player.getPosition().getNeighbor(direction);
-        int newPosX = newPos.getX();
-        int newPosY = newPos.getY();
-
-        if (newPos == null) {
-            return false;
-        }
-        if (newPosX < 0 || newPosX >= map.getWidth() || newPosY < 0 || newPosY >= map.getHeight()) {
-            return false;
-        }
-
-        return true;
+        return newPos.getX() >= 0 && newPos.getY() < map.getWidth() && newPos.getY() >= 0 && newPos.getY() < map.getHeight();
     }
 
     public void move(Direction direction) {
         if (canMove(direction)) {
-            player.getPosition().getNeighbor(direction);
+            player.move(direction);
             printCellInfo();
         } else {
             System.out.println("You can't go that way! Try another direction.");
